@@ -1,0 +1,11 @@
+// i.scss
+
+@import "./var";
+@import "./commonLayout";
+
+
+
+  @media screen and (max-width:800px) {
+  @import "./myData";
+
+}

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.ani_one{width: 100%; min-width: 1200px; height: 200px; padding:0.5rem;
+         background-color: #fdc; border:2px solid #333;}
+
+.ani_one > .test{width: 200px; height: 200px; border-radius:100%; background-color: #5cf;
+                 text-align:center; line-height: 200px;
+                 
+                 /* animation-name:rotateball;
+                 animation-duration:3000ms; 
+                 animation-timing-function:ease;
+                 animation-iteration-count:infinite;
+                 animation-direction:alternate; */
+
+                 animation:rotateball 3000ms infinite alternate-reverse ;
+                 /* animation:rotateball 3000ms infinite paused; */
+                }
+
+                .test:hover {animation-play-state:paused;}
+                /* .test:hover {animation-play-state:running;} */
+
+                 
+                /* @-webkit-keyframes rotateball{}
+                 @-moz-keyframes rotateball{}
+                 @-ms-keyframes rotateball{}
+                 @-o-keyframes rotateball{} */
+                 @keyframes rotateball{
+                 0%{background-color: #f05;}
+                 50%{transform:translate(40vw,-100px); color:#fff; font-weight:bold;}
+                 100%{transform:translate(80vw) rotate(720deg);}
+                }
+
+
+/** animation
+*   animation                 : 애니메이션 기능을 수행 할 이름을 만드는 곳
+*   animation-duration        : 한번의 흐름에 대한 수행 시간
+*   animation-timing-function : 한번의 수행에 따른 흐름의 느낌 (ease , linear , ease-out...)
+*   animation-iteration-count : 반복수행 (1번일경우에는 1만,10번의 경우 10,무한반복시 infinite)
+*   animation-direction       : 애니메이션 수행 전/후 (한번의 수행) 방향을 어떻게? (nomal , reverse , alternate , alternate-reverse)
+
+*   animation-delay           : 애니메이션 지연시간
+*   animation-play-state      : 움직임과 일시정지 처리
+*   animation-fill-mode       : 애니메이션의 전/후에 처리할 내용
+*/
+
+
+.myani {width: 20px; height: 20px; border-radius: 100%;  background-color: #333;
+animation:rotateball 4000ms infinite alternate-reverse;}

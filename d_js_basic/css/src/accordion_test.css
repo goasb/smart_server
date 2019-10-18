@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* accordion_test.css */
+
+/* #headBox {width: 100%; height:100px; background-color: #000;}
+
+h1 {float:left; font-size:2rem; }
+#gnb{width:900px; height:40px; margin:auto;}
+
+#gnb>h2{width: 0; height: 0; overflow:hidden;}
+
+#gnb>ul {width: 100%; height: auto;}
+#gnb>ul:after{content:" "; display:block; clear: both;}
+
+#gnb>ul>li{float:left; width:200px; height:auto; margin-right:1%;}
+#gnb>ul>li:nth-child(4) {margin-right:0;}
+
+#gnb a {display:block; width:100%; height:100%;}
+#gnb a:hover{color: #ff5a00;}
+
+#gnb>ul ul{display:none; width: 100%; height: auto;}
+#gnb>ul ul>li{width: 100%; height:30px; border-bottom:1px solid #777;}
+
+#gnb a{ font-size: 22px; font-weight: 400;color: #fff;letter-spacing: -0.01em;
+   line-height:1;padding: 37px 68px 0 68px;display:block;height: 100%;box-sizing:border-box;}
+#gnb>ul>li> a:after{display: block;content: "";width: 0;height: 2px;background-color: #ff5a00;
+   left: 0; bottom: -2px; transition: all 0.3s;} */
+
+
+#wrap {width: 100%; height: 100%; background-color: rgb(211, 208, 208);}
+h1 {float:left; color:#fff;}
+
+#gnb  {width: 100%; height: 100px; background-color: #fff;}
+#gnb>ul{position: relative; z-index: 100; width: 700px; height: auto; background-color:inherit; margin:auto;}
+
+#gnb>ul:after
+{content:" ";  display: block; clear: both; }
+#gnb>ul:before
+{content:" "; display: block; position: absolute; z-index: -100; bottom: 0; left:50%; margin-left: -50vw; width: 100vw; height: 100%; background-color: #000;}
+
+#gnb>ul>li{float: left; width: 16%; height:auto; margin-right: 3.5rem; line-height: 100px; text-align: center;}
+#gnb>ul>li:last-child{margin-right: 0;}
+
+#gnb>ul ul{display: none; width: 100%; height: auto;}
+#gnb>ul ul>li{width: 100%; height: auto;}
+
+#gnb a{display: block; width: 100%; height: auto; color:#fff;}
+#gnb a:hover{border-bottom: 2px solid #f76; color:#f76;}
+#gnb a:focus{border-bottom: 2px solid #f76; color:#f76;} 
+
+.categori {float:right; width: 40px; height: 40px; color:#fff;
+font-size:2rem; text-align: center; line-height:40px;}
