@@ -6,6 +6,7 @@
   const header  = $ ('#headBox');
   const adver   = $ ('#viewBox');
   const content = $ ('#conBox');
+  const content2 = $ ('#conBox2');
   const footer  = $ ('#footBox');
 //  ============================================
  let tempUrl = "./spigen_temp/";
@@ -28,6 +29,14 @@
   body.append(`<script src="${conJS}"></script>`); // 3번째 방법
  });
 //  content ==============================================================================================
+
+//  content2 ==============================================================================================
+content2.load(tempUrl + 'spigen_main_content_02.html',function(){
+  let conJS = jsUrl + 'make_spigen_content_02.js';
+  body.append(`<script src="${conJS}"><script>`);
+});
+
+//  content2 ==============================================================================================
  footer.load(tempUrl + 'spigen_footer.html');
 
 // setTimeout(function(){},'시간'); // 일정시간이 지난후에 함수를 수행해라!

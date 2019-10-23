@@ -92,4 +92,24 @@ sideLastLink.on('blur', function(){
 // .side_gnb_area 에서 키보드  esc 키를 누르면, 빠져 나가고, 이전의 위치로 돌아가라
 // -> .side_gnb_area가 보이는 곳에서 수행
 
+const textList = '<li><dl><dt><dd><a href="#"></a><dd></dt></dl></li>';
+const textList = [
+  {title:'about',
+   sub:['who we are','what we do','our location']};
+  {title:'careers',
+  sub:['careers','HR_Blog','apply']};
+  {title:'media',
+  sub:['media']};
+  {title:'IR',
+   sub:['investores','IR Archive','IR Meeting']};
+  ];
+
+  for(let i=0; i < textList.length;i++){
+    gnb.find('li').on(i);
+    myNth.find('dl');
+    myNth.find('dt').text(textList(i).title);
+    myNth.find('dd').text(textList(i).sub);
+  }
+
+
 })(jQuery);
