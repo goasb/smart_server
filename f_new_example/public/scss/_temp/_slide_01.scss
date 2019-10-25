@@ -1,8 +1,54 @@
+// node-sass --watch scss --output css
+
 // _slide_01.scss
 
 @import "../_basic/var";
 @import "../_basic/mixin";
 @import "../_basic/etc";
 
+// url () 을 입력하면 해당 파일을 별도의 파일로 첨부(link) 하는 의미
+// url () 없이 ""로 사용하면(scss파일),해당파일을 하나의 파일로 합치는 현상
+
 //  ============================================================
-.slide_temp {width: 90%; /* @include px (min-width,1200); */ height: 700px; margin:auto; border:$border1; background-color:$sample;}
+
+// 전체
+.slide_temp {position: relative; width: 90%; height: 700px; min-width:1200px; margin:auto; 
+  border:$border1; background-color:$sample;}
+
+
+// 좌.우 버튼
+.view_btn {position: absolute; top:50%; width: 100%; height: 0;
+ > button {width: 100px; height: 100px; background-color:$black; float:left;
+  transform:translateY(-50%);
+&.next{float:right;}
+&:hover,
+&:focus {background-color: $primary;}
+    }
+}
+
+// indicator
+
+// .view_indicator
+@include indicator_type_01('.view_indicator',30px);
+
+// 가로형 슬라이드 배너
+.slide_form { $count:4;
+  width: 100%; height: 100%; overflow: hidden;
+  .guide{width: 100% * $count; height: 100%; background-color: $sample;
+    &>div {float:left; width:(100%/$count); height: 100%;
+      // &:nth-of-type(1){background-color:$white;}
+      // &:nth-of-type(2){background-color:darken($white,20%);}
+      // &:nth-of-type(3){background-color:darken($white,40%);}
+      // &:nth-of-type(4){background-color:darken($white,60%);}
+
+
+      // -> js:    for(let i =0; i<4; i++){}
+      // -> js:    for(최초의 임의 변수; 반복횟수; 수행하기위한연산){}
+      @for $i from 1 through $count{
+        &:nth-of-type(#{$i}){background-color:darken($white, $i * 20%);
+        }
+      } // @for
+    
+    }
+  }
+}
