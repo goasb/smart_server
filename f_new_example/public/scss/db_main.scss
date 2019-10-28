@@ -1,0 +1,10 @@
+// db_main.scss
+/* db_main.css */
+
+@import "_basic_01/var_01";
+@import "_basic_01/mixin_01";
+@import "_basic_01/etc_01";
+
+#wrap {width: 100%; height: 100%; background-color: #fff;}
+
+@import "./_temp_01/db_01";
