@@ -1,46 +1,103 @@
 // slide_02.js
-(function(){
-  const viewBox2 = $('#viewBox_02');
-  const indicator = viewBox2.find('.indicator');
-  const indiLi = indicator.find('li');
-  const indiLiLink = indiLi.children('a');
+(function($){
+  const viewBox2 = $('#viewBox_02'),
+        indicator = viewBox2.find('.indicator'),
+        indiLi = indicator.find('li'),
+        indiLiLink = indiLi.children('a'),
+        viewBtn = viewBox2.find('.view_btn'),
+        pause  = viewBtn.find('.pause'),
+        play  = viewBtn.find('.play');
 
-  const slideForm = viewBox2.find('.slide_02_form');
-  const slideGuide = slideForm.children('.guide');
-  const slideEach = slideGuide.children('.banner_area');
-  
-  let timed = 500;
-  // ===========================================================================
-  slideEach.eq(0).addClass('action');
-  indiLi.eq(0).children(indiLiLink).addClass('action');
+  const slideForm = viewBox2.find('.slide_02_form'),
+        slideGuide = slideForm.children('.guide'),
+        slideEach = slideGuide.children('.banner_area');
 
-  indiLiLink.on('click focus', function(e){
-    e.preventDefault();
-    let myThis    = $(this);
-    let myThisPar = myThis.parent('li');
-    let i         = myThisPar.index();
+  let timed = 500,
+      myn = 0, maxn = slideEach.length,
+      mybool = true, linkFocus = true,  go;
+// ---------------------------------------------------------------
+// action class이름 첨부기능수행
+const MoveSlide = function(n){
+  indiLiLink.removeClass('action');
+  indiLi.eq(n).children('a').addClass('action');
+  slideGuide.animate({'marginLeft':(-100 * n)+'%'}, function(){
+    slideEach.removeClass('action');  
+    setTimeout(function(){
+      slideEach.eq(n).addClass('action');
+    }, timed);
+  }); 
+};// MoveSlide()   //=========================================
+MoveSlide(0);
+// ------------------------------------------------------------
+// 일정시간마다 광고배너 움직이게하기
 
-    indiLiLink.removeClass('action');
-    myThis.addClass('action');
-    slideGuide.animate({'marginLeft':(-100 * i)+'%'},function(){
-      slideEach.removeClass('action');
+const GoSlide = function(){
+  go = setInterval(function(){
+    myn++;
+    if(myn >= maxn){ myn = 0; }
+    MoveSlide(myn);
+  }, timed * 4);
+}; // GoSlide();---------------------------------------
 
-      setTimeout(function(){
-        slideEach.eq(i).addClass('action');
-      }, timed);
-  });
-  });
+const StopSlide = function(){ clearInterval(go); };
 
-  //  변수 i는 외부에서 공용으로 사용할 수 있도록, 전역변수로 처리한다
-  //  인디케이터,광고배너 이동 후 처리하는 부분 등의 내용은 별도 함수처리
-  //  setInterval(), clearInterval()
+const PlayBanner = function(bool){
+  if(bool){ 
+    GoSlide(); 
+  }else{ 
+    StopSlide(); 
+  }
+  mybool = bool;
+};// PlayBanner()
 
-  let go;
-  const Goslide = function(){
-    go = setInterval(function(){/* 기능 */}, timed*5);
-  };
-  const stopSlide = clearInterval (go) ;
-  viewBox2.on('mouseenter',StopSlide);
-  viewBox2.on('mouseIeave',GoSlide);
+// ----------------------------------------------------------
+// 공통기능 수행 
+
+// 버튼부 수행
+const showBtn = function(bool){
+ // play, stop 버튼 동작유무 판단
+ if(bool){  
+    play.hide();  
+    pause.show(); 
+    console.log('play');
+  }else{  
+    pause.hide();  
+    play.show();   
+    console.log('stop');
+  }
+};// showBtn(true);
+showBtn(mybool);
+PlayBanner(mybool);
+
+// ----------------------------------------------------------
+viewBox2.on('mouseenter',function(){ 
+  PlayBanner(false);
+});
+viewBox2.on('mouseleave',function(){ 
+  (linkFocus) ? PlayBanner(true) :PlayBanner(false);
+  console.log(linkFocus);
+});
+pause.on('click', function(){
+  showBtn(false); play.show().focus();
+});
+play.on('click', function(){  
+  showBtn(true); pause.show().focus();
+});
+
+// -----------------------------------------------------------
+// 클릭시 배너 움직이게 만들기
+indiLiLink.on('click focus', function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  myn = $(this).parent('li').index();
+  linkFocus = false;
+  PlayBanner(false);
+  MoveSlide(myn);
+});
+
+indiLiLink.off('focus', function(){
+  linkFocus = false;
+})
+// -----------------------------------------------------------
 
 })(jQuery);
