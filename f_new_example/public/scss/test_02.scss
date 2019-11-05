@@ -1,0 +1,69 @@
+// test_02.scss
+/* test_02.css */
+@import "./_basic/var";
+@import "./_basic/mixin";
+@import "./_basic/etc";
+@mixin hidden(){
+  display: block; width: 0; height: 0; overflow: hidden;
+ }
+ //======================================
+ #wrap{width: 100%; height: 100%;}
+ #miniProduct{position: relative; width: 450px; height: 320px; margin:100px auto; 
+               border:1px solid #333;}
+  .btn {position:absolute; right:0; bottom:0; transform: translateY(-50%);
+  width: 100px; height: 40px; 
+    & > button {float:left; width: 50px; height: 50px; background-color:transparent; color:#aaa;
+    &.next{float:right;}
+  &:hover,
+  &:focus{color: $primary;}
+    >span{ @include hidden; }  
+    & >i {font-size:2rem;}
+    
+  } // button
+} // .btn
+
+// ==========================================
+// 가로형 슬라이드 배너
+.product {$count:3+1;
+  width: 100%; height: 100%;
+  >ul {position:relative; width: 100% * $count; height: 100%; margin:-100%;
+    >li {float:left; width: 100% / $count; height: 100%; 
+         background-repeat: no-repeat;
+         background-position: 50% 50%;
+         background-size: cover;}
+  @for $i from 1 to $count {}
+  
+        }
+      }
+
+
+  
+
+
+
+
+
+  $url:'../img/slide_test_01/';
+  .product{width: 100%; height: 250px; background-color:$sample; overflow: hidden;
+           background-repeat:no-repeat; 
+           background-position:50% 50%; 
+           background-size:cover; 
+           background-image:url($url+'wood.jpg');
+
+      >ul{ $count:3;
+          width:100% * $count; height:100%;
+        >li{float: left; width:100% / $count; height:100%;
+           box-sizing: border-box; padding: 20px;
+          >a{display:block; width:100%; height:100%;
+            background-repeat: no-repeat; 
+            background-position:50% 50%;
+            background-size: contain;
+          >span{ @include hidden; }          
+            } // a
+          
+          &:nth-child(1)>a{background-image: url($url+"slide_01.png");}
+          &:nth-child(2)>a{background-image: url($url+"slide_02.png");}
+          &:nth-child(3)>a{background-image: url($url+"slide_03.png");}
+                  }// li
+              }// ul
+            }//.product
