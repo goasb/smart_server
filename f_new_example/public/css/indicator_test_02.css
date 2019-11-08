@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* indicator_test_02.css */
+/* 
+@include horizontal_slide_banner('.my_banner',4){
+  $url:'../img/mybanner/';
+  $imgName:'mybanner_';
+  $count : 4;
+  @include  horizon_banner_img($count, $imgName, $url:$url, $file:'png');
+  // 기타 div 및 하위  내용을 삽입
+} 
+*/
+/* @mixin myname(){}   // @include myname(); @function myFn(){}  // myFn(); */
+#wrap { width: 100%; height: 100%; }
+
+#miniProduct { position: relative; width: 500px; height: 320px; margin: 100px auto; background-color: #ccc; }
+
+.btn { position: absolute; right: 0; bottom: 30%; width: 100%; height: 100px; }
+
+.btn > button { float: left; width: 50px; height: 50px; background-color: #333; }
+
+.btn > button.next { float: right; }
+
+.btn > button.prev { float: left; }
+
+.btn > button:hover, .btn > button:focus { color: #f06; }
+
+.btn > button > span { display: block; width: 0; height: 0; overflow: hidden; }
+
+.btn > button > i { font-size: 4rem; text-align: center; line-height: 50px; }
+
+.indicator { position: absolute; transform: translateX(-50%); bottom: -50px; left: 50%; padding: 5px; width: 351px; height: 30px; border-radius: 26px; background-color: #ccc; }
+
+.indicator > li { float: left; width: 30px; height: 30px; margin-left: 10px; }
+
+.indicator > li:nth-child(1) { margin-left: 0; }
+
+.indicator > li > a { display: block; margin: auto; width: 100%; height: 100%; background-color: #fff; border-radius: 100%; }
+
+.indicator > li > a span { display: block; width: 0; height: 0; overflow: hidden; }
+
+.indicator > li > a:active { background-color: #fa0; }
+
+.product_wrap { width: 100%; height: 320px; overflow: hidden; }
+
+.product_wrap > ul { width: 900%; height: 100%; }
+
+.product_wrap > ul > li { float: left; width: 11.11111%; height: 100%; box-sizing: border-box; padding: 20px; }
+
+.product_wrap > ul > li > a { display: block; width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%; background-size: contain; }
+
+.product_wrap > ul > li > a > span { display: block; width: 0; height: 0; overflow: hidden; }
+
+.product_wrap > ul > li:nth-child(1) > a { background-image: url("../img/slide_test_02/slide_menu01.png"); }
+
+.product_wrap > ul > li:nth-child(2) > a { background-image: url("../img/slide_test_02/slide_menu02.png"); }
+
+.product_wrap > ul > li:nth-child(3) > a { background-image: url("../img/slide_test_02/slide_menu03.png"); }
+
+.product_wrap > ul > li:nth-child(4) > a { background-image: url("../img/slide_test_02/slide_menu04.png"); }
+
+.product_wrap > ul > li:nth-child(5) > a { background-image: url("../img/slide_test_02/slide_menu05.png"); }
+
+.product_wrap > ul > li:nth-child(5) > a { background-image: url("../img/slide_test_02/slide_menu06.png"); }
+
+.product_wrap > ul > li:nth-child(5) > a { background-image: url("../img/slide_test_02/slide_menu07.png"); }
+
+.product_wrap > ul > li:nth-child(5) > a { background-image: url("../img/slide_test_02/slide_menu08.png"); }
+
+.product_wrap > ul > li:nth-child(5) > a { background-image: url("../img/slide_test_02/slide_menu09.png"); }

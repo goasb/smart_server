@@ -1,0 +1,61 @@
+// indicator_test_02
+/* indicator_test_02.css */
+@import "./_basic/var";
+@import "./_basic/mixin";
+@import "./_basic/etc";
+@mixin hidden(){
+  display: block; width: 0; height: 0; overflow: hidden;
+}
+
+// ===========================================================================
+
+#wrap {width: 100%; height: 100%;}
+#miniProduct {position: relative; width: 500px; height: 320px; margin:100px auto; background-color: #ccc;}
+.btn {position: absolute; right:0; bottom:30%; width: 100%; height: 100px; 
+  &>button {float:left; width: 50px; height: 50px; background-color:$sub1;
+  &.next {float:right;}
+  &.prev {float:left;}
+&:hover,
+&:focus {color:$primary;}
+  >span {@include hidden;}
+  &>i {font-size:4rem; text-align: center; line-height:50px;}
+      } // &>button
+    } // .btn
+
+
+.indicator {position: absolute; transform: translateX(-50%); bottom:-50px; left:50%; padding:5px; 
+            width: 351px; height: 30px; border-radius:26px; background-color:$gray;
+  
+  >li {float:left; width: 30px; height: 30px; margin-left:10px;
+    &:nth-child(1){margin-left:0;}
+    >a {display: block; margin:auto; width: 100%; height: 100%; background-color:$white; border-radius:100%;
+      span{@include hidden;}
+      &:active{background-color:$yellow;}
+    }
+  } // li
+} // .indicator
+
+$url:'../img/slide_test_02/';
+.product_wrap {width: 100%; height: 320px; overflow: hidden;
+  >ul {$count:9;  width: 100% * $count; height: 100%;
+    >li {float:left; width: 100% / $count; height: 100%; box-sizing:border-box; padding:20px;
+      >a {display: block; width: 100%; height: 100%;
+        background-repeat: no-repeat;
+        background-position:50% 50%;
+        background-size:contain; 
+        >span{ @include hidden; }
+      } // a
+
+        &:nth-child(1)>a{background-image:url($url+"slide_menu01.png");}
+        &:nth-child(2)>a{background-image:url($url+"slide_menu02.png");}
+        &:nth-child(3)>a{background-image:url($url+"slide_menu03.png");}
+        &:nth-child(4)>a{background-image:url($url+"slide_menu04.png");}
+        &:nth-child(5)>a{background-image:url($url+"slide_menu05.png");}
+        &:nth-child(5)>a{background-image:url($url+"slide_menu06.png");}
+        &:nth-child(5)>a{background-image:url($url+"slide_menu07.png");}
+        &:nth-child(5)>a{background-image:url($url+"slide_menu08.png");}
+        &:nth-child(5)>a{background-image:url($url+"slide_menu09.png");}
+
+          } // li
+        } // ul
+      } // .product_wrap

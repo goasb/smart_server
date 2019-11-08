@@ -1,0 +1,59 @@
+<!--slide_test_02_result.html-->
+<!DOCTYPE html>
+<html lang="ko-KR">
+ <head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <link rel="stylesheet" href="../font/fontawesome/css/all.css">
+   <link rel="stylesheet" href="../css/base/reset.css">
+   <link rel="stylesheet" href="../css/base/common.css">
+   <link rel="stylesheet" href="../css/slide_test_02_result.css">
+
+   <!--[if lte IE 9]>
+    <script src="./ie/html5shiv-3.7.3/dist/html5shiv.min.js"> </script>
+    <script src="../ie/PIE-1.0.0/PIE.js"></script>
+    <script src="../ie/Respond-1.4.2/dest/respond.min.js"></script>
+   <![endif]-->
+
+   <link rel="shortcut icon" type="image/png" href="../favicon.png">
+   <link rel="apple-touch-icon" href="../favicon.png">
+
+   <title>indicator_test_02</title>
+ </head>
+
+ <body>
+<!-- 스크립트  ======================================================== -->
+<noscript>
+<p>현재 접속하고 있는 사이트의 기능의 일부가 원활하게 실행되고 있지 않습니다.<br />자바스크립트의 기능을 활성화 해주세요</p>
+<p><a target="_blank" href="http://enable-javascript.com/ko"></a>자바스크립트 활성화 처리하기</p>
+</noscript>
+<!-- 스크립트  ======================================================== -->
+<div id="wrap">
+    <h1>slide button 기능</h1>
+    <div id="miniProduct">
+     <div class="product">
+       <ul>
+         <li class="product_01"><a href="#"><span>상품설명01</span></a></li>
+         <li class="product_02"><a href="#"><span>상품설명02</span></a></li>
+         <li class="product_03"><a href="#"><span>상품설명03</span></a></li>
+       </ul>
+     </div>
+    </div>
+  </div>
+
+
+<script src="../js/base/jquery-3.4.1.min.js"></script>
+<script src="../js/base/jquery-ui.min.js"></script>
+<!-- <script src="../js/src/slide_test_02_result.js"></script> -->
+<script src="../js/src/slide_plug_sample_01.js"></script>
+  <script>
+    (function($){
+      $('#miniProduct').mySlide().horizon();
+      $('.subSlide')
+    })(jQuery);
+  </script>
+</body>
+</html>

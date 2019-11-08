@@ -17,7 +17,7 @@
            background-color:$gray; border-radius:100%;
            span{ @include hidden; }
            }
-         &.active > a{background-color:darken($gray, 40%);}
+         &:active > a{background-color:darken($gray, 40%);}
         }// li
        }// .indicator
 
