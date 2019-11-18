@@ -1,7 +1,7 @@
 // main.js
 (function($){
-  const body = $('body'); // body
-  const wrap = $('#wrap'); // #wrap
+  const body   = $('body'); // body
+  const wrap   = $('#wrap'); // #wrap
   // script 내용 간편작성함수 생성
   const JsLink = (temp) => {
     return body.append(`<script src="../js/src/temp/${temp}.js"></script>`);
@@ -30,23 +30,13 @@ const vB3 = $('#viewBox_03');
 vB3.load('./temp/slide_03.html', function(){
   return JsLink('slide_03');
 });
-
-// ======================================================
-// 광고영역 4 생성
+// ============================================================
+// 광고영역 4 생성 
 
 wrap.append('<section id="viewBox_04"></section>');
 const vB4 = $('#viewBox_04');
 vB4.load('./temp/slide_04.html', function(){
   return JsLink('slide_04');
-});
-
-// ======================================================
-// 광고영역 5 생성
-
-wrap.append('<section id="viewBox_05"></section>');
-const vB5 = $('#viewBox_05');
-vB5.load('./temp/slide_05.html', function(){
-  return JsLink('slide_05');
 });
 
 })(jQuery);

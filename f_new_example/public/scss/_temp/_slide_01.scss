@@ -8,7 +8,7 @@
 }
 
 // .view_btn 좌우 버튼
-.view_btn{position: absolute; top:50%; width:100%; height:0;   
+.view_btn{position: absolute; z-index:500; top:50%; width:100%; height:0;   
   & > button{width:100px; height:100px; background-color: $black; float:left;
             transform:translateY(-50%);
    &.next{float:right;}
@@ -22,14 +22,14 @@
 
 
 $url :'../img/slide_01/';
-$myImg : ('SlideImage_01.jpg', 
-          'SlideImage_02.jpg', 
-          'SlideImage_03.jpg', 
-          'SlideImage_04.jpg');
+$myImg : ('mySlideImage_01.jpg', 
+          'mySlideImage_02.jpg', 
+          'mySlideImage_03.jpg', 
+          'mySlideImage_04.jpg');
 
 // 가로형 슬라이드 배너 
 .slide_form{ $count:4;
-  width:100%; height:100%; /* overflow: hidden; */
+  width:100%; height:100%;  overflow: hidden; 
   .guide{width: 100% * $count; height: 100%; background-color:$sample;
     &>div{float:left; width:(100% / $count); height: 100%; 
          padding:4rem; box-sizing:border-box;
@@ -44,7 +44,7 @@ $myImg : ('SlideImage_01.jpg',
           // background-image:url($url + nth($myImg, $i));
           @if ($i < 10) {  $n : '0'+$i; } 
           @else {  $n : $i; } 
-          background-image:url($url + 'SlideImage_#{$n}.jpg');
+          background-image:url($url + 'mySlideImage_#{$n}.jpg');
         }
      }// @for
     }

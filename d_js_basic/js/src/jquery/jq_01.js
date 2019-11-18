@@ -1,17 +1,17 @@
-// jq_01.js
+// jq_01.js 
 
-
-(function ($){
+(function ($) { 
   // console.log($.fn.jquery);
 
   // #wrap{width:700px; height:auto; margin:auto; background-color:#faa;}
 
-  $('#wrap').css({'width':'700px','height':'auto','backgroundColor':'#faa'});
-  $('h1').css({'width':'100%','height':'auto','backgroundColor':'#acf'});
+  $('#wrap').css({'width':'700px', 'height':'auto', 'backgroundColor':'#faa'});
+  $('h1').css({'width':'100%', 'height':'auto', 'backgroundColor':'#acf'});
 
-  // h2.addEbentListener('click',function(){});
-  $('h2').on('click',function(){});
-    $('#wrap').animate({'height':'1000px','backgroundColor':'#0af'});
+  // h2.addEventListener('click', function(){});
+  $('h2').on('click', function(){
+    $('#wrap').animate({'height':'1000px', 'backgroundColor':'#0af'});
+  });
 
 
 })(jQuery);

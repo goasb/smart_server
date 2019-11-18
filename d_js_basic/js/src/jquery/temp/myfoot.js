@@ -1,4 +1,4 @@
-(function($){
+(function ($) {
   const footBox = $('#footBox');
-  footBox.css({'backgroundColor':'#ccc'});
+  footBox.css({ 'backgroundColor': '#ccc' });
 })(jQuery);

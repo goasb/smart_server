@@ -8,7 +8,6 @@
   // 기타 div 및 하위  내용을 삽입
 } 
 */
-/* @mixin myname(){}   // @include myname(); @function myFn(){}  // myFn(); */
 #wrap { width: 100%; height: 100%; background-color: #fa0; }
 
 #conBox2 { width: 100%; height: 100%; background-color: #996600; }
@@ -51,23 +50,23 @@
 
 #viewBox .slide_form > ul { width: 100%; height: 100%; }
 
-#viewBox .slide_form > ul > li { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; font-size: 5rem; font-weight: 900; color: #fff; word-break: break-all; white-space: nowrap; text-shadow: 0.2rem 0.2rem 0.2rem rgba(51, 51, 51, 0.5); box-sizing: border-box; /* padding:5vw; */ background-repeat: no-repeat; background-position: 100% 50%; background-size: 150%; }
+#viewBox .slide_form > ul > li { position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 100%; font-size: 5rem; font-weight: 900; color: #fff; word-break: break-all; white-space: nowrap; text-shadow: 0.2rem 0.2rem 0.2rem rgba(51, 51, 51, 0.5); box-sizing: border-box; /* padding:5vw;  */ background-repeat: no-repeat; background-position: 100% 50%; background-size: 150%; }
 
-#viewBox .slide_form > ul > li > dl { width: 100%; height: 50%; padding-top: 5vw; }
+#viewBox .slide_form > ul > li > dl { width: 100%; height: 50%; padding-top: 8vw; }
 
-#viewBox .slide_form > ul > li > dl dt { opacity: 0; font-size: 7rem; text-transform: capitalize; }
+#viewBox .slide_form > ul > li > dl dt { opacity: 0; font-size: 8rem; text-transform: capitalize; }
 
 #viewBox .slide_form > ul > li > dl dd { opacity: 0; font-size: 1.3rem; text-shadow: none; margin: 5rem 0; }
 
 #viewBox .slide_form > ul > li > dl dd.link { text-transform: uppercase; text-decoration: underline; }
 
-#viewBox .slide_form > ul > li > dl.action dt, #viewBox .slide_form > ul > li > dl.action dd.con, #viewBox .slide_form > ul > li > dl.action dd.link { opacity: 1; transform: translateY(-10px); }
+#viewBox .slide_form > ul > li > dl.action dt, #viewBox .slide_form > ul > li > dl.action dd.con, #viewBox .slide_form > ul > li > dl.action dd.link { opacity: 1; transform: translateY(-50px); }
 
 #viewBox .slide_form > ul > li > dl.action dt { transition: all 500ms ease 100ms; }
 
 #viewBox .slide_form > ul > li > dl.action dd.con { transition: all 500ms ease 300ms; }
 
-#viewBox .slide_form > ul > li > dl.action dd.link { transition: all 500ms ease 500ms; }
+#viewBox .slide_form > ul > li > dl.action dd.link { transition: all 500ms ease  500ms; }
 
 #viewBox .slide_form > ul > li:nth-child(1) { background-color: #11ff11; }
 
